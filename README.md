@@ -9,7 +9,7 @@ link to the actual youtube video : https://youtu.be/CftLBPI1Ga4?si=1n2yP3NUSxlmZ
 ![Object Detection in Action](https://github.com/Torajabu/YOLOv10-Object-cars-persons-and-bikes-Detection---Python/blob/main/result_compressed.gif)  
 
 ### Image Result  
-![YOLOv10 Detection Result](https://github.com/Torajabu/YOLOv10-Object-cars-persons-and-bikes-Detection---Python/raw/main/image%20%20object%20de
+![YOLOv10 Detection Result](https://github.com/Torajabu/YOLOv10-Object-cars-persons-and-bikes-Detection---Python/blob/main/image%20%20object%20dection%20result.jpg)
 
 
 ## Prerequisites
