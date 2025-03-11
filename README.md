@@ -41,8 +41,7 @@ Installation
     Clone this repository:
    
 
-    git clone https://github.com/your-username/yolov10-object-detection.git
-    cd yolov10-object-detection
+    git clone https://github.com/Torajabu/YOLOv10-Object-cars-persons-and-bikes-Detection---Python.git
 
     Run the script:
    
