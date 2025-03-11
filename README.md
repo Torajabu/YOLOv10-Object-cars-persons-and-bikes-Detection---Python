@@ -19,8 +19,7 @@ You can install `ffmpeg` using the following commands:
   sudo apt-get install ffmpeg
 
     macOS:
-    bash
-    Copy
+    
 
     brew install ffmpeg
 
@@ -30,15 +29,13 @@ You can install `ffmpeg` using the following commands:
 Installation
 
     Clone this repository:
-    bash
-    Copy
+   
 
     git clone https://github.com/your-username/yolov10-object-detection.git
     cd yolov10-object-detection
 
     Run the script:
-    bash
-    Copy
+   
 
     python yolov10_detection.py
 
