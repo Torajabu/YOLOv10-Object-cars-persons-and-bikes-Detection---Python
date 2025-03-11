@@ -1,0 +1,75 @@
+import os
+import urllib.request
+import subprocess
+
+# Define paths
+base_dir = "/home/rajab/Downloads"
+output_dir = os.path.join(base_dir, "yolov10_outputs")
+weights_dir = os.path.join(base_dir, "yolov10_weights")
+
+# Create necessary directories
+os.makedirs(output_dir, exist_ok=True)
+os.makedirs(weights_dir, exist_ok=True)
+
+# Clone YOLOv10 repository if not already present
+repo_path = os.path.join(base_dir, "yolov10")
+if not os.path.exists(repo_path):
+    subprocess.run(["git", "clone", "https://github.com/THU-MIG/yolov10.git", repo_path], check=True)
+
+# Install YOLOv10 dependencies
+subprocess.run(["pip", "install", "-q", "."], cwd=repo_path, check=True)
+
+# URLs of the weight files
+urls = [
+    "https://github.com/THU-MIG/yolov10/releases/download/v1.1/yolov10n.pt",
+    "https://github.com/THU-MIG/yolov10/releases/download/v1.1/yolov10s.pt",
+    "https://github.com/THU-MIG/yolov10/releases/download/v1.1/yolov10m.pt",
+    "https://github.com/THU-MIG/yolov10/releases/download/v1.1/yolov10b.pt",
+    "https://github.com/THU-MIG/yolov10/releases/download/v1.1/yolov10l.pt",
+    "https://github.com/THU-MIG/yolov10/releases/download/v1.1/yolov10x.pt"
+]
+
+# Download the required weight files
+for url in urls:
+    filename = os.path.basename(url)
+    filepath = os.path.join(weights_dir, filename)
+    if not os.path.exists(filepath):
+        urllib.request.urlretrieve(url, filepath)
+        print(f"Downloaded: {filepath}")
+    else:
+        print(f"Already exists: {filepath}")
+
+# Perform object detection on Image
+image_source = "/home/rajab/Pictures/Screenshot from 2025-03-11 12-39-16.png"
+if os.path.exists(image_source):
+    subprocess.run([
+        "yolo", "task=detect", "mode=predict", "save=True",
+        f"model={weights_dir}/yolov10x.pt", f"source={image_source}",
+        f"project={output_dir}", "name=image_results"
+    ], check=True)
+else:
+    print(f"Image not found: {image_source}")
+
+# Perform object detection on Video
+video_source = "/home/rajab/Downloads/videoplayback.mp4"
+if os.path.exists(video_source):
+    subprocess.run([
+        "yolo", "task=detect", "mode=predict", "save=True",
+        f"model={weights_dir}/yolov10x.pt", f"source={video_source}",
+        f"project={output_dir}", "name=video_results"
+    ], check=True)
+else:
+    print(f"Video not found: {video_source}")
+
+# Compress video output
+save_path = os.path.join(output_dir, "video_results", "videoplayback.avi")
+compressed_path = os.path.join(output_dir, "video_results", "result_compressed.mp4")
+
+if os.path.exists(save_path):
+    subprocess.run(["ffmpeg", "-i", save_path, "-vcodec", "libx264", compressed_path], check=True)
+    if os.path.isfile(compressed_path):
+        print(f"Compressed video saved at {compressed_path}")
+    else:
+        print("Compression failed.")
+else:
+    print(f"File not found: {save_path}")
