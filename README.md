@@ -4,8 +4,12 @@ This repository contains a Python script that automates the setup and execution 
 
 link to the actual youtube video : https://youtu.be/CftLBPI1Ga4?si=1n2yP3NUSxlmZj04
 
+## RESULTS
+VIDEO RESULT
+![Object Detection in Action](https://github.com/Torajabu/YOLOv10-Object-cars-persons-and-bikes-Detection---Python/blob/main/result_compressed.gif)
+IMAGE RESULT 
+![YOLOv10 Detection Result](https://github.com/Torajabu/YOLOv10-Object-cars-persons-and-bikes-Detection---Python/raw/main/image%20%20object%20dection%20result.jpg)
 
-![Object Detection in Action](https://github.com/Torajabu/YOLOv10-Object-cars-persons-and-bikes-Detection---Python/raw/main/result_compressed-ezgif.com-video-to-gif-converter.gif)
 
 ## Prerequisites
 
