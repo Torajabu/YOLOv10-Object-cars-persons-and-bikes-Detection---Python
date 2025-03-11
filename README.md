@@ -2,6 +2,11 @@
 
 This repository contains a Python script that automates the setup and execution of object detection using the YOLOv10 model. The script downloads the necessary weight files, performs object detection on both images and videos, and compresses the output video.
 
+link to the actual youtube video : https://youtu.be/CftLBPI1Ga4?si=1n2yP3NUSxlmZj04
+
+
+![https://github.com/Torajabu/YOLOv10-Object-cars-persons-and-bikes-Detection---Python/blob/main/result_compressed-ezgif.com-video-to-gif-converter.gif] 
+
 ## Prerequisites
 
 Before running the script, ensure you have the following installed:
@@ -116,4 +121,3 @@ Acknowledgments
 
     Royalty free videos youtube channel for the footage used
 
-https://youtu.be/CftLBPI1Ga4?si=1n2yP3NUSxlmZj04
