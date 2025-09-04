@@ -5,7 +5,7 @@ This repository contains a Python script that automates the setup and execution 
 
 link to the actual youtube video : https://youtu.be/CftLBPI1Ga4?si=1n2yP3NUSxlmZj04
 
-## ARCHITECTURE DIAGRAM 
+## Data Flow Diagram & System Architecture
 ![architecture](https://github.com/Torajabu/YOLOv10-Object-cars-persons-and-bikes-Detection---Python/blob/main/arch.png)
 
 ## RESULTS
